@@ -8,4 +8,3 @@ export default function Sample() {
     )
 }
 
-参考書　P74　3.2
