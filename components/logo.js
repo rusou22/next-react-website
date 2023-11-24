@@ -1,9 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function logo() {
-    return (
-        <Link href="/">
-            <a>CUBE</a>
-        </Link>
-    )
+  return <Link href="/">CUBE</Link>;
 }

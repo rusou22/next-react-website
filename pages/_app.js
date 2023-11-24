@@ -1,11 +1,11 @@
-import layout from "components/layout"
-import "style/sample.css"
+import Layout from "components/layout"
+import "styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
   return (
-    <layout>
+    <Layout>
      <Component{...pageProps} />
-    </layout>
+    </Layout>
   )
 }
 
