@@ -1,5 +1,7 @@
 :root {
+/* サイト全体で使用する可変の設定はHTMLのルート要素<html>に適用 */
   /* カラー(色) */
+  /* 色の値を追加。変数名はデザインデータに合わせて指定 */
   --white: #ffffff;
   --gray-10: #eeeeee;
   --gray-25: #aaaaaa;
@@ -9,6 +11,7 @@
   --accent: #0d87e0;
 
   /* タイポグラフィ(フォントサイズ) */
+  /* モバイル用とデスクトップ用のフォントサイズを、可変なサイズ(Fluidタイポグラフィ)としてCSS関数のclamp()を使って指定。画面幅に合わせてメディアクエリなしでフォントサイズが変わるようにする */
   --body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16-18px */
   --display: clamp(4.5rem, 1.83rem + 11.34vw, 10rem); /* 72-160 */
   --heading1: clamp(2rem, 1.3rem + 3vw, 4rem); /* 32-64px */
@@ -18,6 +21,7 @@
   --small-heading3: calc(var(--small-heading2) * 0.86); /* 12-23px */
 
   /* スペース(余白・間隔) */
+  /* フォントサイズと同じように、モバイル用とデスクトップ用のサイズを可変なサイズとしてCSS関数のclamp()を使って指定。画面幅に合わせて、メディアクエリなしでサイズが変わるようにする */
   --space-xs: clamp(1.25rem, 1rem + 0.98vw, 1.875rem); /* 20-30px */
   --space-sm: calc(var(--space-xs) * 1.5); /* 30-45px */
   --space-md: calc(var(--space-xs) * 2); /* 40-60px */
@@ -29,8 +33,8 @@
 /* 基本設定 */
 body {
   color: var(--black);
-  font-family: -apple-system, BlinkMacSystemFont, "segoe UI", Helvetica, Arial,
-    sans-serif;
+  /* font-familyはOSにインストールされたシステムフォントを使うように指定 */
+  font-family: -apple-system, BlinkMacSystemFont, "segoe UI", Helvetica, Arial,sans-serif;
   font-size: var(--body);
 }
 
@@ -47,24 +51,21 @@ h3 {
 }
 
 /* リセット */
-body,
-h1,
-h2,
-h3,
-p,
-figure,
-ul {
+/* 主要素のマージン、パディング、リストマークを削除 */
+body,h1,h2,h3,p,figure,ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* 横幅にパディングを含めて処理するように指定 */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* リンクの色を親要素に揃え、下線を削除 */
 a {
   color: inherit;
   text-decoration: none;

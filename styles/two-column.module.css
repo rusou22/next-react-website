@@ -1,0 +1,18 @@
+/* 3つのコンポーネントで2段組みのレイアウトを構成する */
+
+.flexContainer {
+  /* 横並び(基本形)のCSSをcomposes */
+  composes: sideBySide from "./utils.module.css";
+  gap: var(--space-md);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+@media (main-with: 768px) {
+  /* メインとサイドバーの横幅を指定。 */
+  .main {
+    width: 768px;
+  }
+  .sidebar {
+    width: 240px;
+  }
+}

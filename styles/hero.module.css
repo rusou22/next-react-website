@@ -1,14 +1,21 @@
+.flexContainer{
+  composes : sideBySideCenter from 'styles/utils.module.css';
+}
+
+/* 上下場ディングを指定 */
 .text {
   padding-top: calc(var(--display) * 0.5);
   padding-bottom: calc(var(--display) * 0.7);
 }
 
+/* フォントサイズ、太さ、字間を指定 */
 .title {
   font-size: var(--display);
   font-weight: 900;
   letter-spacing: 0.15em;
 }
 
+/* フォントサイズを指定 */
 .subtitle {
   font-size: var(--small-heading2);
 }

@@ -1,0 +1,9 @@
+/* コンタクト情報を管理する */
+
+.stack > * + * {
+    margin-top:var(--stack-space,1em)
+}
+
+.heading{
+    font-size:var(--body);
+}

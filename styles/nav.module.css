@@ -1,0 +1,26 @@
+/* 子要素を横並びにして間隔を2emに指定 */
+.list {
+  display: flex;
+  gap: 2em;
+}
+
+/* ホバーできる環境(デスクトップ環境)に適用する設定 */
+@media (hover: hover) {
+  /* ホバー時の文字色をアクセントカラーに指定 */
+  .list a:hover {
+    color: var(--accent);
+  }
+}
+
+/* ホバーできない環境(モバイル環境)に適用する設定 */
+@media (hover: hover) {
+  /* タップ時に適用されるデバイス標準のハイライトカラーを削除 */
+  .list a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* タップ時にアクセントカラーで表示するように指定 */
+  .list a:active{
+    color:var(--accent);
+  }
+}

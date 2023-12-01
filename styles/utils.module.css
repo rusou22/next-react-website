@@ -1,0 +1,37 @@
+/*  レイアウトスタイル  */
+
+/* 両端揃え =子要素を両端に配置したレイアウト。縦方向中央を揃えており、レスポンシブでも配置は変化しない。ヘッダーとページネーションで使用する。 */
+/* 両端揃えの設定はクラス名  spaceBetween  で用意 */
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 横並び(基本形) =子要素をモバイルでは縦並びに、デスクトップでは横並びにしたレイアウト。アバウトページと記事べーじのレイアウトで使用する。 */
+/* 横並び(基本形) の設定はクラス名  sideBySide  で用意*/
+.sideBySide {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .sideBySide {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* 横並び(中央揃え) =横並び(基本形)と同じように、子要素をモバイルでは縦並びに、デスクトップでは横並びにしたレイアウト。だたし、モバイルでは横方向中央、デスクトップでは縦方向中央を揃える。ヒーローとフッターで使用する。 */
+/*  横並び(中央揃え)の設定はクラス名  sideBySideCenter  で用意*/
+.sideBySideCenter {
+  composes: sideBySide;
+  align-items:center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sideBySideCenter {
+    text-align: left;
+  }
+}
