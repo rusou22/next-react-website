@@ -11,8 +11,27 @@
   /* メインとサイドバーの横幅を指定。 */
   .main {
     width: 768px;
-  }
+}
+
+/* position:stickyの設定。topでは固定時に上に確保する余白サイズを指定。画面上部で固定するため、align-selfをflex-start(上揃え)にしています。 */
   .sidebar {
     width: 240px;
+    position:sticky;
+    top:40px;
+    align-self:flex-start;
   }
+
+
+/* テキストなどのインライン要素はtext-alignで右揃え(right)に指定 */
+.sidebar *{
+    text-align:right;
+}
+
+/* ブロック要素は中身に合わせた横幅(fit-content)にし、左マージンをautoにすることで右揃えにします。また、Flexboxでレイアウトされた要素も右揃えになるように指定しています。 */
+.sidebar :is(div,ul){
+    width:fit-content;
+    margin-left:auto;
+    place-items:flex-end;
+    place-content:flex-end;
+}
 }

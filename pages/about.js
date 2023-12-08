@@ -2,6 +2,8 @@ import Container from "components/container";
 import Hero from "components/hero";
 import PostBody from "components/post-body";
 import Contact from "components/contact";
+import Image from "next/image";
+import eyecatch from "images/about.jpg";
 import {
   TwoColumn,
   TwoColumnMain,
@@ -12,6 +14,17 @@ export default function About() {
   return (
     <Container>
       <Hero title="About" subtitle="About development activities" />
+
+      <figure>
+        <Image
+          src={eyecatch} //画像は１つの図版として<figure>でマークアップ//
+          alt=""
+          layout="responsive"   //可変サイズのレスポンシブイメージのコードを生成するように指定。//
+          sizes="(main-width:1152px) 1152px,100vw"  //レスポンシブイメージの画像セットの中から、画面幅い応じて最適なサイズの画像を選択するように指定。//
+                  priority
+                  placeholder="blur" //ブレースホルダとして画像を表示する(滑らかに画像を表示される)//
+        />
+      </figure>
 
       <TwoColumn>
         <TwoColumnMain>

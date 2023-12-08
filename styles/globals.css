@@ -1,3 +1,5 @@
+/*基本設定*/
+
 :root {
 /* サイト全体で使用する可変の設定はHTMLのルート要素<html>に適用 */
   /* カラー(色) */
@@ -48,6 +50,11 @@ h2 {
 
 h3 {
   font-size: var(--heading3);
+}
+
+/* .next/image */
+span > img{
+  transition:0.2s; /* next/imageで表示する画像は<span>直下の<img>にtransitionを適用しています */
 }
 
 /* リセット */
