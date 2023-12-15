@@ -14,7 +14,7 @@ import {
 export default function About() {
   return (
     <Container>
-      <Meta pageTitle="アバウト" />
+      <Meta pageTitle="アバウト" pageDesc="about development activities" />
 
       <Hero title="About" subtitle="About development activities" />
 
