@@ -14,7 +14,11 @@ import {
 export default function About() {
   return (
     <Container>
-      <Meta pageTitle="アバウト" pageDesc="about development activities" />
+      <Meta pageTitle="アバウト" pageDesc="about development activities"
+        pageImg={eyecatch.src}
+        pageImgW={eyecatch.width}
+        pageImgH={eyecatch.height}
+      />
 
       <Hero title="About" subtitle="About development activities" />
 
@@ -55,3 +59,7 @@ export default function About() {
     </Container>
   );
 }
+
+
+
+/* P198まで終わった */
