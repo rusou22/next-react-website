@@ -7,7 +7,7 @@ const { siteTitle, siteDesc, siteUrl, siteLocale, siteType, siteIcon } = siteMet
 //汎用OGP画像
 import siteImg from 'images/ogp.jpg'
 
-export default function Meta({ pageTitle,pageDesc }) {
+export default function Meta({ pageTitle,pageDesc ,pageImg,pageImgW,pageImgH}) {
     //ページのタイトル
     const title = pageTitle ? '${pageTitle} | ${siteTitle}' : siteTitle
 
@@ -19,7 +19,7 @@ export default function Meta({ pageTitle,pageDesc }) {
     const url = '${siteUrl}${router.asPath}'
 
     //OPG画像
-    const img = pageimg || siteImg.src
+    const img = pageImg || siteImg.src
     const imgW = pageImgW || siteImg.width
     const imgH = pageImgH || siteImg.height
     const imgUrl = img.startsWith('https') ? img : '${siteUrl}${img}'
