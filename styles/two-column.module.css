@@ -7,7 +7,7 @@
   margin: var(--space-md) 0 var(--space-lg);
 }
 
-@media (main-with: 768px) {
+@media (min-width: 768px) {
   /* メインとサイドバーの横幅を指定。 */
   .main {
     width: 768px;
