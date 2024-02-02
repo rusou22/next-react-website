@@ -7,6 +7,7 @@ import PostHeader from 'components/post-header'
 import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from 'components/two-column' 
 import ConvertBody from 'components/convert-body' 
 import PostCategories from 'components/post-categories'
+import Pagination from 'components/pagination'
 import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
 import PostBody from '@/components/post-body'
@@ -39,6 +40,7 @@ export default function Post({
                 <PostHeader title={title} subtitle="Blog Article" publish={publish} />
                 <figure>
                     <Image
+                        key={eyecatch.url}
                         src={eyecatch.url}
                         alt=""
                         layout="responsive"
@@ -59,8 +61,15 @@ export default function Post({
                         <PostCategories categories={categories} />
                     </TwoColumnSidebar>
                 </TwoColumn>
-                <div>{prevPost.title} {prevPost.slug}</div>
-                <div>{nextPost.title} {nextPost.slug}</div>
+
+                <Pagination
+                     prevText={prevPost.title}
+                     prevUrl={`/blog/${prevPost.slug}`}
+                     nextText={nextPost.title}
+                     nextUrl={`/blog/${nextPost.slug}`}
+                />
+                
+
             </article>
         </Container>
     )
@@ -72,7 +81,7 @@ export async function getStaticPaths() {
 
     return {
         paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
-        fallback:false,
+        fallback: 'blocking',
     }
 }
 
@@ -80,6 +89,9 @@ export async function getStaticProps(context) {
     const slug = context.params.slug
 
     const post = await getPostBySlug(slug)
+    if (!post) {
+        return { notFound: true }
+    }else {
 
     const description = extractText(post.content)
 
@@ -104,5 +116,8 @@ export async function getStaticProps(context) {
             nextPost: nextPost,
 
         },
-    }
+     }
+    
 }
+}
+
