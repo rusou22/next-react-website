@@ -9,7 +9,7 @@ import { eyecatchLocal } from "lib/constants";
 export default function Category({ name,posts }) {
     return (
         <Container>
-            <meta pageTitle={name} pageDesc={`${name}に関する記事`} />
+            <Meta pageTitle={name} pageDesc={`${name}に関する記事`} />
             <PostHeader title={name} subtitle="Blog Category" />
             <Posts posts={posts} />
         </Container>

@@ -5,15 +5,17 @@ import Image from 'next/image'
 export default function Posts({ posts }) {
     return (
         <div className={styles.gridContainer}>
-            {posts.map(({ title, slug, eyecatch }) => (
-                <article className={styles.post} key={slug}>
+            {Object.values(posts).map(({ title, slug, eyecatch }) => (
+                <article className={styles.eachPodt} key={slug}>
                     <Link href={`/blog/${slug}`}>
                         <figure>
                             <Image
                                 src={eyecatch.url}
                                 alt=""
-                                layout="fill"
-                                objectFit="cover"
+                                layout="responsive"
+                                width={eyecatch.width}
+                                height={eyecatch.height}
+
                                 sizes="(min-width: 1152px) 576px 50vw" 
                                 placeholder="blur"
                                 blurDataURL={eyecatch.blurDataURL}
